@@ -1,0 +1,89 @@
+name: base_project
+description: A base Flutter project using Cubit, Firebase, REST API, and more.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State Management
+  flutter_bloc: ^8.1.3
+  equatable: ^2.0.5
+
+  # Firebase Core & Auth
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.17.4
+
+  # Networking
+  dio: ^5.4.2
+  cached_network_image: ^3.3.1
+
+  # Local Storage
+  # hive: ^2.2.3
+  # hive_flutter: ^1.1.0
+  # shared_preferences: ^2.2.2
+
+  # Permissions
+  permission_handler: ^11.3.1
+
+  # Routing
+  go_router: ^13.0.0
+
+  # Others
+  flutter_inappwebview: ^6.0.0
+  has_dynamic_island: ^1.0.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/ic_back.png
+
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Lato-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/Lato-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Lato-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Lato-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Lato-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Lato-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Lato-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Lato-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Lato-BlackItalic.ttf
+          weight: 900
+          style: italic
+
+
+  # see https://flutter.dev/to/font-from-package
