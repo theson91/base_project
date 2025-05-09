@@ -1,6 +1,8 @@
 # 🧱 Base Flutter Project (Clean Architecture + Cubit)
 
-This is a modular, scalable Flutter base project structure using **Cubit**, **Clean Architecture**, and essential production tools like **Firebase**, **Dio**, **go_router**, and **Lato fonts**.
+This is my personal Flutter base project — something I built to speed up development, stay organized, and avoid repeating setup for every new app.  
+
+It follows a **feature-first structure** with a clean architecture approach, powered by **Cubit**, **Firebase Auth**, **Dio**, and **go_router**. I’ve also integrated things like custom fonts (Lato), permission handling, and a few other essentials I almost always use.
 
 ---
 
@@ -20,23 +22,29 @@ lib/
 │
 ├── features/                 # Feature-first architecture
 │   └── auth/                 # Example feature: Authentication
-│       ├── domain/           # Business logic layer
-│       │   ├── auth_repository.dart         # Interface + implementation
+│       ├── domain/
+│       │   ├── auth_repository.dart
 │       │   ├── sign_in_usecase.dart
 │       │   ├── sign_up_usecase.dart
 │       │   └── user_credentials.dart
-│       ├── cubit/            # Cubit + State
+│       ├── cubit/
 │       │   ├── auth_cubit.dart
 │       │   └── auth_state.dart
-│       └── presentation/     # UI layer (pages + widgets)
+│       └── presentation/
 │           ├── auth_page.dart
 │           └── widgets/
 │
 ├── routes/                   # go_router setup and route config
-│
 ├── widgets/                  # Shared/reusable widgets (e.g., buttons, loaders)
-│
 └── main.dart                 # App entry point
+
+assets/
+├── fonts/                    # Custom fonts like Lato
+│   ├── Lato-Regular.ttf
+│   ├── Lato-Bold.ttf
+│   └── ...
+├── images/                   # Static image assets (e.g. icons, logos)
+│   └── ic_back.png
 ```
 
 ---
@@ -52,6 +60,15 @@ lib/
 - **Fonts:** Lato (custom fonts added)
 - **Permissions:** permission_handler
 - **WebView Support:** flutter_inappwebview
+
+---
+
+## 🎨 Asset Management
+
+- All assets are stored in the `assets/` folder.
+- Fonts (e.g. Lato family) are stored in `assets/fonts/`
+- Static images like icons or logos go into `assets/images/`
+- Assets are registered in `pubspec.yaml` for automatic bundling.
 
 ---
 
