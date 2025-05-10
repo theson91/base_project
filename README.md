@@ -10,33 +10,32 @@ It follows a **feature-first structure** with a clean architecture approach, pow
 
 ```
 lib/
-├── core/                     # App-wide configuration, constants, themes, utils
-│   ├── constants/
-│   ├── theme/
-│   └── utils/
-│
-├── data/                     # Shared models and services across features
-│   ├── models/
-│   ├── repositories/
-│   └── services/
-│
-├── features/                 # Feature-first architecture
-│   └── auth/                 # Example feature: Authentication
-│       ├── domain/
-│       │   ├── auth_repository.dart
-│       │   ├── sign_in_usecase.dart
-│       │   ├── sign_up_usecase.dart
-│       │   └── user_credentials.dart
-│       ├── cubit/
-│       │   ├── auth_cubit.dart
-│       │   └── auth_state.dart
-│       └── presentation/
-│           ├── auth_page.dart
-│           └── widgets/
-│
-├── routes/                   # go_router setup and route config
-├── widgets/                  # Shared/reusable widgets (e.g., buttons, loaders)
-└── main.dart                 # App entry point
+├── core/                # Global configurations and utilities
+│   ├── constants/       # Static values like API keys, config, globals
+│   ├── native/          # MethodChannel wrapper for native communication
+│   ├── theme/           # App-wide colors and text styles
+│   └── utils/           # Logger, status bar helpers, etc.
+
+├── data/                # Source of truth for models, repositories, services
+│   ├── core/            # Shared API response wrappers
+│   ├── models/          # JSON-serializable data classes
+│   ├── repositories/    # Business logic/data-fetching logic
+│   └── services/        # Raw network or local service logic (e.g., API, DB)
+
+├── features/            # Feature-first domain (e.g., auth)
+│   └── auth/            
+│       ├── cubit/       # Bloc/Cubit logic and state
+│       ├── domain/      # Use cases and repository interface
+│       └── presentation/# Screens and UI widgets
+
+├── routes/              # App routing configuration (e.g., go_router)
+
+├── widgets/             # Shared/reusable UI components
+│   └── buttons/         
+│       ├── fill_color_button.dart
+│       └── bordered_button.dart
+
+└── main.dart   
 
 assets/
 ├── fonts/                    # Custom fonts like Lato
